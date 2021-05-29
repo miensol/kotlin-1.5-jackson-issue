@@ -1,0 +1,18 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.0'
+// uncomment to see that it works in 1.4.32
+//    id 'org.jetbrains.kotlin.jvm' version '1.4.32'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3"
+}
