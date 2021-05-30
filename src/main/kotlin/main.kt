@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 
 inline fun <reified T> jsonList(mapper: ObjectMapper, content: String) =
@@ -16,7 +17,9 @@ fun <T> json(
 fun main() {
     val mapper = ObjectMapper().registerKotlinModule()
 
-    val listOfMaps = jsonList<Map<String, Any>>(mapper, """[{"someKey": "someValue"}]""")
+    val fromReadValue = mapper.readValue<List<Map<String, Any>>>("""[{"someKey": "someValue"}]""")
+    println(fromReadValue)
 
-    println(listOfMaps)
+    val fromJsonList = jsonList<Map<String, Any>>(mapper, """[{"someKey": "someValue"}]""")
+    println(fromJsonList)
 }

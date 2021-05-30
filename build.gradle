@@ -9,10 +9,12 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3"
+//    implementation 'com.github.FasterXML:jackson-module-kotlin:0469040'
 }
